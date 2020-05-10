@@ -4,6 +4,7 @@ const BoxForm = ({boxes, setBoxes}) => {
     const [color, setColor] = useState("");
     const [height, setHeight] = useState("");
     const [width, setWidth] = useState("");
+    // const [hasBeenSubmited, setHasBeenSubmited] = useState(false);
 
 
     const colorHandle = (e) => {
@@ -17,6 +18,7 @@ const BoxForm = ({boxes, setBoxes}) => {
     }
     const createBox = (e) => {
         e.preventDefault();
+        // setHasBeenSubmited( true );
         setBoxes( [...boxes, {
             backgroundColor: color,
             height: height,
@@ -29,10 +31,13 @@ const BoxForm = ({boxes, setBoxes}) => {
                 width: width + "px",
             }
         }]);
+        setColor("");
+        setHeight("");
+        setWidth("");
     }
 
 return(
-    <form onSubmit={createBox}>
+    <form onSubmit={createBox} >
         <div className="row">
             <div className="col">
                 <div className="inputcontainer">
