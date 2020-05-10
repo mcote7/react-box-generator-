@@ -34,6 +34,7 @@ const BoxForm = ({boxes, setBoxes}) => {
         setColor("");
         setHeight("");
         setWidth("");
+        console.log([...boxes]);
     }
 
 return(
